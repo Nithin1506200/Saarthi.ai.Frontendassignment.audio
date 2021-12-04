@@ -26,11 +26,49 @@
     -->
     <title>Saarthi.ai audio</title>
     
+<style>
+  #cursor{
+    position: absolute;
+    z-index: 3;
+    background-color:rgb(13, 186, 209);
+    perspective: 100px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 50%;
+    transition: all ease-out .2s;
+    animation: rotate 2s ease-in-out infinite alternate-reverse ;
+  }
+  .animationclass {
+    animation: expand .5s ease-out   forwards ;
 
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate3d(0,0,0,0deg) scale(.8);
+    }
+    to {
+      transform: rotate3d(1,.5,1,360deg) scale(1);
+    }
+  }
+  @keyframes expand {
+    from {
+      opacity: 1;
+transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(2);
+      
+    }
+    
+  }
+</style>
 
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="cursor"></div>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -42,5 +80,13 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      let cursor=document.getElementById("cursor");
+      document.addEventListener("mousemove",(e)=>{
+        cursor.style.left=e.pageX+"px";
+        cursor.style.top=e.pageY+"px";
+      })
+  
+    </script>
   </body>
 </html>

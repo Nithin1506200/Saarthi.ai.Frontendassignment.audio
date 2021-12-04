@@ -6,6 +6,8 @@ import markers from "wavesurfer.js/dist/plugin/wavesurfer.markers";
 import Controls from "./controls";
 import Wave from "./wavecontainer";
 import ListItems from "./listnotes";
+import addimg from "./imgs/add.png";
+import pop from "./imgs/msgpop.mp3";
 export class Newwav extends React.Component {
   constructor() {
     super();
@@ -40,7 +42,7 @@ export class Newwav extends React.Component {
           {
             time: this.state.wavesurfer.getCurrentTime(),
             label: this.state.newlable,
-            color: "#ffffff",
+            color: "black",
             notes: this.state.newnotes,
             key: Date.now(),
           },
@@ -49,11 +51,13 @@ export class Newwav extends React.Component {
       this.state.wavesurfer.addMarker({
         time: this.state.wavesurfer.getCurrentTime(),
         label: this.state.newlable,
-        color: "#ffffff",
+        color: "black",
       });
 
       this.state.newnotes = "";
       this.state.newlable = "";
+      let sound = new Audio(pop);
+      sound.play();
     } else {
       alert("notes / lable is empty");
     }
@@ -136,7 +140,7 @@ export class Newwav extends React.Component {
     setInterval(() => {
       this.state.wavesurfer.clearMarkers();
       this.state.mymarkers.forEach((e) => this.state.wavesurfer.addMarker(e));
-    }, 1000);
+    }, 500);
   }
   async deletemarker() {
     this.state.wavesurfer.clearMarkers();
@@ -148,17 +152,21 @@ export class Newwav extends React.Component {
   render() {
     return (
       <div>
-        <h1> Upload your Audio file</h1>
-        <input
-          type="file"
-          accept="audio/mp3,audio/wav,audio/*"
-          onChange={(e) => {
-            this.handleup(e);
+        <div className="upload">
+          <h1> Upload your Audio file</h1>
+          <input
+            id="uploadfile"
+            type="file"
+            accept="audio/mp3,audio/wav,audio/*"
+            onChange={(e) => {
+              this.handleup(e);
 
-            //   this.state.wavesurfer.load(this.state.path);
-          }}
-        ></input>
-        <button onClick={this.test}>Load </button>
+              //   this.state.wavesurfer.load(this.state.path);
+            }}
+          ></input>
+          <button onClick={this.test}>Load</button>
+        </div>
+
         <Wave></Wave>
         <Controls
           info={this.state.info}
@@ -168,6 +176,7 @@ export class Newwav extends React.Component {
           totalduration={this.state.totalduration}
         ></Controls>
         <div className="notes">
+          Add notes at current cursor position:
           <input
             value={this.state.newlable}
             placeholder="lable "
@@ -178,7 +187,14 @@ export class Newwav extends React.Component {
             placeholder="Type your notes"
             onChange={this.addnotesonchange}
           ></input>
-          <button onClick={this.addnotes}>add</button>
+          <button
+            style={{ backgroundColor: "none", border: "none" }}
+            onClick={() => {
+              this.addnotes();
+            }}
+          >
+            <img style={{ width: "25px", height: "25px" }} src={addimg}></img>
+          </button>
           {/*  <button onClick={this.updatemarker}>Update markers</button> */}
         </div>
         <ListItems

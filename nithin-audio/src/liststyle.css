@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&display=swap');
+* {
+    font-family: 'Arvo', serif;
+}
+span {
+    text-align: center;
+    
+
+}
+h2 {
+    background-color: black;
+    color: white;
+    padding: .5em;
+    border-radius: .5em;
+}
+img {
+    margin-right: 2px;
+}
+.notessection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(253, 244, 244);
+}
+.noteslist {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+   gap:.5rem 1em;
+   margin: 1em;
+   transition: all .5s;
+   border-radius: 10px;
+   padding: 10px;
+}
+.noteslist:hover {
+    transform: scale(1.1);
+}
+.notestime{
+
+color: crimson;
+display: flex;
+}
+
+.noteslable{
+    grid-column-start:2 ;
+    grid-column-end:4 ;
+}
+.notesnotes {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    background-color:rgb(53, 53, 53);
+    color: white;
+    border-radius: 10px;
+    min-width: 500px;
+    max-width: 500px;
+    padding:.2em .5em ;
+    font-style: italic;
+    font-kerning: normal;
+
+}
+#delete {
+background: red;
+border: none;
+border-radius: 1rem;
+grid-row-start:1 ;
+grid-column-start: 4;
+width: 4em;
+color: white;
+place-self: start end;
+
+}
+#delete:hover{
+    cursor: pointer;
+}
+.noteslist:nth-child(2n){
+    background-color: rgb(238, 237, 237);
+}
+.noteslist:nth-child(2n+1){
+    background-color: rgba(165, 165, 165, 0.3);
+}

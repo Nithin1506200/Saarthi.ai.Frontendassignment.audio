@@ -8,12 +8,18 @@
 }
 h5 {
     margin: 3px;
-    background-color: rgb(2, 86, 88);
+    background-color: black;
     display: inline;
     color:white;
     padding: 2px;
     border-radius: 4px;
     font-family: 'EB Garamond', serif;
+    transition: all .2s;
+}
+h5:hover{
+    transform: scale(1.1);
+    color: black;
+    background-color: white;
 }
 h3 {
     display: inline;
@@ -23,17 +29,26 @@ h3 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
 }
 .controlbutton button , input {
     margin: 10px;
     
 }
 .controlbutton button {
-    background-color: rgb(59, 59, 61);
+    background-color: rgb(241, 241, 241);
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    border:0;
+    transition: all .5s;
 }
 .controlbutton button:hover {
 background-color: red;
+transform: scale(1.1);
+cursor: pointer;
+}
+.controlbutton {
+    background-color: rgb(245, 245, 245);
+    
 }

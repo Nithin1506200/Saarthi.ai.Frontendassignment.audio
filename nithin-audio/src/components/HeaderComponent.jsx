@@ -4,7 +4,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <h1>Hellow world</h1>
+        <h3>Saarthi.ai - Nithin N -DSU -audio-app</h3>
       </div>
     );
   }
