@@ -25,21 +25,28 @@ code {
   top: 20px;
   z-index: 3;
   backdrop-filter: blur(10px);
+  transition:1s;
+  
 }
 #waveform {
 
-  
+   
     width: 80%;
     border-radius: 10px;
     box-shadow: rgb(204, 204, 204) 5px 5px 10px 0px;
     min-height: 100px;
     background-color: rgb(247, 247, 247);
-    transition: .5s;
+    transition: 1s;
 }
 #waveform:hover {
+    transform: scaley(1.5) scaleX(1.1) rotateX(20deg);
+    box-shadow: none;
+}
+#wavecontainer:hover{
+  top: 20px;
   
-  
-  transform: scale(1.1) rotateX(20deg);
+  height: 300px;
+  position: absolute;
 }
 cursor {
   height: 100%;
@@ -81,11 +88,12 @@ body {
 }
 .upload button{
   border: none;
-  background-color: black;
-  color: white;
+  background-color: rgb(248, 93, 93);
+  color: rgb(255, 255, 255);
+  height: 30px;
 }
 .upload button:hover{
-  color: red;
+  background-color: rgb(238, 34, 34);
   cursor: pointer;
 }
 .upload h1 {

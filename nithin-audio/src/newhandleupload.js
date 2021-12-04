@@ -153,7 +153,7 @@ export class Newwav extends React.Component {
     return (
       <div>
         <div className="upload">
-          <h1> Upload your Audio file</h1>
+          <h1> Upload your Audio file :</h1>
           <input
             id="uploadfile"
             type="file"
@@ -164,7 +164,7 @@ export class Newwav extends React.Component {
               //   this.state.wavesurfer.load(this.state.path);
             }}
           ></input>
-          <button onClick={this.test}>Load</button>
+          <button onClick={this.test}>Load the audio</button>
         </div>
 
         <Wave></Wave>
@@ -176,7 +176,7 @@ export class Newwav extends React.Component {
           totalduration={this.state.totalduration}
         ></Controls>
         <div className="notes">
-          Add notes at current cursor position:
+          Add notes at current Time:
           <input
             value={this.state.newlable}
             placeholder="lable "
