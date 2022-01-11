@@ -1,4 +1,5 @@
 # Saarthi.ai.Frontendassignment.audio
+#this is my first experience in Reactjs
 React js + websurfer (audio waveform api) + custom css
 -----(Some bugs yet to be rectified)------
  deployed site : https://audio-nithin-dsu.netlify.app/
